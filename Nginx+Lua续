@@ -5,6 +5,16 @@
 进入目录：/usr/local/src/nginx-1.10.0下
 export LUAJIT_LIB=/usr/local/lib
 export LUAJIT_INC=/usr/local/include/luajit-2.1
-./configure --prefix=/usr/local/nginx-1.10.0 --add-module=../lua-nginx-module-0.10.2 --add-module=../echo-nginx-module-0.60
+./configure --prefix=/Users/taofadeng/java/nginx-1.10.0 --add-module=../lua-nginx-module-0.10.2 --add-module=../echo-nginx-module-0.60
+make -j2
+sudo make install
+
+/Users/taofadeng/java/nginx-1.10.0/sbin/nginx
+
+##redis2-nginx-module
+redis2-nginx-module-0.13
+export LUAJIT_LIB=/usr/local/lib
+export LUAJIT_INC=/usr/local/include/luajit-2.1
+./configure --prefix=/Users/taofadeng/java/nginx-1.10.0 --add-module=../lua-nginx-module-0.10.2 --add-module=../echo-nginx-module-0.60  --add-module=../redis2-nginx-module-0.13
 make -j2
 sudo make install
