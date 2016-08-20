@@ -1,3 +1,10 @@
-#安装模块 https://github.com/openresty/
+#安装模块 https://github.com/openresty/**/tags
 ##安装 echo-nginx-module  
-下载地址：https://github.com/agentzh/echo-nginx-module
+下载地址：https://github.com/openresty/echo-nginx-module/tags
+放到目录：/usr/local/src/下，/usr/local/src/echo-nginx-module-0.60
+进入目录：/usr/local/src/nginx-1.10.0下
+export LUAJIT_LIB=/usr/local/lib
+export LUAJIT_INC=/usr/local/include/luajit-2.1
+./configure --prefix=/usr/local/nginx-1.10.0 --add-module=../lua-nginx-module-0.10.2 --add-module=../echo-nginx-module-0.60
+make -j2
+sudo make install
