@@ -44,5 +44,27 @@ You can do this now by running this command (with sudo):
 taofadengdeMacBook-Pro:LuaJIT-2.1.0-beta2 taofadeng$ 
 
 ##2. 下载准备nginx lua模块
-2. 下载准备nginx lua模块
-  
+下载地址：https://github.com/openresty/lua-nginx-module/tags
+下载后解压到/usr/local/src/下 如：/usr/local/src/lua-nginx-module-0.10.2
+
+##3. 安装nginx
+###3.1 安装
+下载地址：http://nginx.org/
+下载nginx解压到目录/usr/local/src下，如：/usr/local/src/nginx-1.10.0，进入/usr/local/src/nginx-1.10.0目录
+export LUAJIT_LIB=/usr/local/lib
+export LUAJIT_INC=/usr/local/include/luajit-2.1
+./configure --prefix=/usr/local/nginx-1.10.0 --add-module=../lua-nginx-module-0.10.2
+make -j2
+sudo make install
+##4. nginx lua配置
+nginx配置文件加入如下配置：
+location ~* ^/2328(/.*) {
+      default_type 'text/plain';
+      content_by_lua 'ngx.say("hello, ttlsa lua")';
+}
+
+##5. 启动测试
+###5.1 启动nginx
+/usr/local/nginx-1.10.0/sbin/nginx
+###5.2 访问测试
+curl http://localhost/ taofadeng
