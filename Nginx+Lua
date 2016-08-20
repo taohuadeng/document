@@ -1,4 +1,5 @@
   nginx lua模块淘宝开发的nginx第三方模块,它能将lua语言嵌入到nginx配置中,从而使用lua就极大增强了nginx的能力.nginx以高并发而知名,lua脚本轻便,两者的搭配堪称完美.接下来请看如何安装nginx + ngx_lua模块.以及最后来个简单的测试。
+ sudo ./configure --with-openssl=/Users/taofadeng/Downloads/openresty-1.9.15.1/bundle/openssl-1.0.2
 系统环境：centos/redhat
 安装前准备好如下软件包
 · nginx  地址：http://www.nginx.org
